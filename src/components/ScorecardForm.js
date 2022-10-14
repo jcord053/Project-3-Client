@@ -21,7 +21,7 @@ function ScorecardForm(props){
       ...state,
       courseId: props.courseId
     };
-    axios.post('http://localhost:3001/api/tasks', scorecardObject, {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/tasks`, scorecardObject, {
       headers: {
         authorization: `Bearer ${storedToken}`
       }

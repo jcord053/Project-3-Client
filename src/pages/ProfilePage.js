@@ -11,7 +11,7 @@ function ProfilePage(){
 
     const storedToken = localStorage.getItem('authToken');
 
-    axios.get('http://localhost:3001/api/scorecards',
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/scorecards`,
      {
       headers: {
         authorization: `Bearer ${storedToken}`

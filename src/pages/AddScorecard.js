@@ -38,7 +38,7 @@ function AddScorecard(){
   const handleSubmit = event => {
     event.preventDefault();
     const storedToken = localStorage.getItem('authToken');
-    axios.post(`http://localhost:3001/api/scorecards/${courseId}`, state, {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/scorecards/${courseId}`, state, {
         headers: {
           authorization: `Bearer ${storedToken}`
         }

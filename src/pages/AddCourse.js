@@ -37,7 +37,7 @@ function AddCourse(){
   const handleSubmit = event => {
     event.preventDefault();
     const storedToken = localStorage.getItem('authToken');
-    axios.post('http://localhost:3001/api/courses', state, {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/courses`, state, {
         headers: {
           authorization: `Bearer ${storedToken}`
         }

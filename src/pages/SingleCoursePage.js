@@ -16,7 +16,7 @@ function SingleCoursePage(){
 
     const storedToken = localStorage.getItem('authToken');
 
-    axios.get(`http://localhost:3001/api/courses/${courseId}`, {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/courses/${courseId}`, {
       headers: {
         authorization: `Bearer ${storedToken}`
       }

@@ -16,7 +16,7 @@ function SingleScorecardPage(){
 
     const storedToken = localStorage.getItem('authToken');
 
-    axios.get(`http://localhost:3001/api/scorecards/${scorecardId}`, {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/scorecards/${scorecardId}`, {
       headers: {
         authorization: `Bearer ${storedToken}`
       }
@@ -28,7 +28,7 @@ function SingleScorecardPage(){
 
   const deleteSingleScorecard = scorecardId => {
     const storedToken = localStorage.getItem('authToken');
-    axios.delete(`http://localhost:3001/api/scorecards/${scorecardId}`, {
+    axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/scorecards/${scorecardId}`, {
       headers: {
         authorization: `Bearer ${storedToken}`
       }
